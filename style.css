@@ -1,14 +1,31 @@
-/* Global Styles */
+/* ---------- RESET & VARIABLES ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0b0b0b;
+  --panel: #141414;
+  --panel-soft: #1a1a1a;
+  --border: rgba(255,255,255,0.08);
+  --text: #ffffff;
+  --muted: #bdbdbd;
+  --accent: #00ff99;
+  --accent-dark: #00cc7a;
+}
+
+/* ---------- BASE ---------- */
 body {
   font-family: 'Roboto', sans-serif;
-  background: #0f0f0f;
-  color: #ffffff;
-  margin: 0;
+  background: radial-gradient(circle at top, #111 0%, var(--bg) 60%);
+  color: var(--text);
   line-height: 1.6;
 }
 
 a {
-  color: #00ff99;
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -16,99 +33,145 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Header */
+/* ---------- HEADER ---------- */
 header {
-  background: #1a1a1a;
-  padding: 40px 20px;
+  background: linear-gradient(180deg, #1a1a1a, #101010);
+  padding: 60px 20px 45px;
   text-align: center;
+  border-bottom: 1px solid var(--border);
 }
 
 header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 2.7rem;
+  color: var(--accent);
+  letter-spacing: 0.4px;
 }
 
 header p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-top: 12px;
+  font-size: 1.15rem;
+  color: var(--muted);
 }
 
-/* Navigation */
+/* ---------- NAV ---------- */
 nav ul {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px 22px;
   list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav ul li {
-  margin: 0 15px;
+  margin-top: 26px;
 }
 
 nav ul li a {
   font-weight: 700;
-  transition: 0.3s;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: 0.25s ease;
 }
 
 nav ul li a:hover {
+  background: rgba(0,255,153,0.12);
   color: #ffffff;
+  text-decoration: none;
 }
 
-/* Sections */
+/* ---------- SECTIONS ---------- */
 section {
-  padding: 50px 20px;
-  max-width: 900px;
-  margin: 20px auto;
-  background: #1a1a1a;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  max-width: 950px;
+  margin: 28px auto;
+  padding: 44px 28px;
+  background: linear-gradient(180deg, var(--panel), var(--panel-soft));
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
 }
 
 h2 {
-  color: #00ff99;
-  margin-bottom: 20px;
+  color: var(--accent);
+  font-size: 1.6rem;
+  margin-bottom: 16px;
 }
 
+h3 {
+  margin-top: 22px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+p {
+  color: #e6e6e6;
+  margin: 10px 0;
+}
+
+/* ---------- LISTS ---------- */
+ul, ol {
+  margin-left: 22px;
+  margin-top: 10px;
+}
+
+li {
+  margin: 8px 0;
+  color: #eaeaea;
+}
+
+/* ---------- IMAGE ---------- */
 .build-image {
   width: 100%;
-  max-width: 600px;
+  max-width: 680px;
   display: block;
-  margin: 20px auto;
-  border-radius: 10px;
+  margin: 26px auto 0;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
 }
 
-/* Buttons */
+/* ---------- BUTTONS ---------- */
 .btn {
   display: inline-block;
-  background-color: #00ff99;
-  color: #000;
-  padding: 12px 25px;
-  margin-top: 10px;
-  border-radius: 5px;
+  margin-top: 16px;
+  padding: 14px 28px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #0a0a0a;
   font-weight: 700;
-  transition: 0.3s;
+  letter-spacing: 0.3px;
+  transition: 0.25s ease;
 }
 
 .btn:hover {
-  background-color: #00cc7a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,255,153,0.35);
+  text-decoration: none;
 }
 
-/* Footer */
+/* ---------- FOOTER ---------- */
 footer {
+  margin-top: 40px;
+  padding: 24px;
   text-align: center;
-  padding: 20px;
-  background: #1a1a1a;
-  font-size: 14px;
+  background: #101010;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--muted);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
+footer a {
+  font-weight: 700;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 2.2rem;
   }
 
-  nav ul li {
-    margin: 10px 0;
+  section {
+    margin: 20px 14px;
+    padding: 34px 20px;
+  }
+
+  nav ul {
+    gap: 10px;
   }
 }
